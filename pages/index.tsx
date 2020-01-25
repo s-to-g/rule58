@@ -5,6 +5,8 @@ import {useQuery} from '@apollo/react-hooks'
 import styled from 'styled-components'
 
 import BIKES_QUERY from 'graphql/bikes.query'
+import Box from 'ui/Box'
+import Text from 'ui/Text'
 
 const LINKS = [
   {
@@ -55,12 +57,13 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <Box>
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Title>En liten titel</Title>
+      <Text color="primary">Prova text component</Text>
       <ul>
         {LINKS.map((link) => (
           <li key={link.route}>
@@ -78,7 +81,7 @@ const Home = () => {
             )
           })}
       </ul>
-    </div>
+    </Box>
   )
 }
 
