@@ -6,7 +6,7 @@ const EVENTS_QUERY = gql`
       id
       title
       date
-      image {
+      picture {
         id
         url
       }

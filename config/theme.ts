@@ -7,6 +7,12 @@ interface ColorProps {
   colors: {[key in Colors]: string}
 }
 
+const palette = {
+  black: '#000000',
+  white: '#ffffff',
+  blue: '#0070f3',
+}
+
 type FontSizes = 'xs' | 's' | 'm' | 'l' | 'xl'
 
 interface FontSizesProps {
@@ -31,9 +37,9 @@ export const theme: Theme &
   FontSizesProps &
   SpaceProps = {
   colors: {
-    black: '#000000',
-    white: '#ffffff',
-    primary: '#0070f3',
+    black: palette.black,
+    white: palette.white,
+    primary: palette.blue,
   },
   breakpoints: ['400px', '800px'],
   fontSizes: {

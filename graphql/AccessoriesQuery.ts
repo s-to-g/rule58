@@ -5,7 +5,7 @@ const ACCESSORIES_QUERY = gql`
     accessories {
       id
       brand
-      image {
+      picture {
         id
         url
       }

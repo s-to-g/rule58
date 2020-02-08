@@ -5,7 +5,7 @@ const BIKES_QUERY = gql`
     bikes {
       id
       brand
-      image {
+      picture {
         id
         url
       }

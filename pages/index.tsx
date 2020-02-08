@@ -1,12 +1,11 @@
-import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import {useQuery} from '@apollo/react-hooks'
-import styled from 'styled-components'
+import React from 'react';
+import Link from 'next/link';
+import {useQuery} from '@apollo/react-hooks';
 
-import BIKES_QUERY from 'graphql/bikes.query'
-import Box from 'ui/Box'
-import Text from 'ui/Text'
+import BIKES_QUERY from 'graphql/BikesQuery';
+import Box from 'ui/Box';
+import Text from 'ui/Text';
+import Page from 'ui/Page';
 
 const LINKS = [
   {
@@ -39,50 +38,43 @@ const LINKS = [
     url: 'kontakt',
     title: 'Kontakta oss',
   },
-]
-
-const Title = styled.h1`
-  color: ${({theme}) => theme.colors.primary};
-`
+];
 
 const Home = () => {
-  const {data, loading, error} = useQuery(BIKES_QUERY)
+  const {data, loading, error} = useQuery(BIKES_QUERY);
 
   if (loading) {
-    return <p>Loading...</p>
+    return <p>Loading...</p>;
   }
 
   if (error) {
-    return <p>Error: {JSON.stringify(error)}</p>
+    return <p>Error: {JSON.stringify(error)}</p>;
   }
 
   return (
-    <Box>
-      <Head>
-        <title>Home</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Title>En liten titel</Title>
-      <Text color="primary">Prova text component</Text>
-      <ul>
-        {LINKS.map((link) => (
-          <li key={link.route}>
-            <Link href={`/${link.route}`} as={`/${link.url}`}>
-              <a>{link.title}</a>
-            </Link>
-          </li>
-        ))}
-        {data.bikes &&
-          data.bikes.map((bike: any) => {
-            return (
-              <li key={`bike__${bike.id}`}>
-                <p>{bike.title}</p>
-              </li>
-            )
-          })}
-      </ul>
-    </Box>
-  )
-}
+    <Page head={{title: 'Testing'}}>
+      <Box>
+        <Text color="blue">Prova text component</Text>
+        <ul>
+          {LINKS.map((link) => (
+            <li key={link.route}>
+              <Link href={`/${link.route}`} as={`/${link.url}`}>
+                <a>{link.title}</a>
+              </Link>
+            </li>
+          ))}
+          {data.bikes &&
+            data.bikes.map((bike: any) => {
+              return (
+                <li key={`bike__${bike.id}`}>
+                  <Text>{bike.brand}</Text>
+                </li>
+              );
+            })}
+        </ul>
+      </Box>
+    </Page>
+  );
+};
 
-export default Home
+export default Home;
