@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import Box from 'ui/Box';
+import Header from 'ui/Header';
 
 interface Props {
   children: React.ReactNode;
@@ -11,13 +12,15 @@ interface Props {
 }
 
 const Page = ({children, head}: Props) => (
-  <Box>
+  <>
     <Head>
-      <title>{head.title}</title>
-      <link rel="icon" href="/favicon.ico" />
+      <title>{head.title} | Rule 58</title>
     </Head>
-    <Box padding="m">{children}</Box>
-  </Box>
+    <Box padding="m" display="block">
+      <Header />
+      {children}
+    </Box>
+  </>
 );
 
 export default Page;

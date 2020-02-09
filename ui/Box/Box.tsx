@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import {
   space,
   width,
@@ -16,7 +16,7 @@ import {
   SpaceProps,
   WidthProps,
   PositionProps,
-} from 'styled-system'
+} from 'styled-system';
 
 type BoxProps = ColorProps &
   FlexboxProps &
@@ -25,7 +25,7 @@ type BoxProps = ColorProps &
   LayoutProps &
   SpaceProps &
   WidthProps &
-  PositionProps
+  PositionProps;
 
 const Box = styled.div<BoxProps>`
   ${color}
@@ -36,6 +36,11 @@ const Box = styled.div<BoxProps>`
   ${flexbox}
   ${border}
   ${borderRadius}
-`
+`;
 
-export default Box
+Box.defaultProps = {
+  display: 'flex',
+  flexDirection: 'row',
+};
+
+export default Box;

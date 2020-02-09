@@ -1,18 +1,18 @@
-import React from 'react'
-import App from 'next/app'
-import {ApolloProvider} from '@apollo/react-hooks'
-import {ThemeProvider} from 'styled-components'
+import React from 'react';
+import App from 'next/app';
+import {ApolloProvider} from '@apollo/react-hooks';
+import {ThemeProvider} from 'styled-components';
 
-import theme, {GlobalStyle} from 'config/theme'
-import withData from 'utils/apollo-client'
+import theme, {GlobalStyle} from 'config/theme';
+import withData from 'utils/apollo-client';
 
 interface Props {
-  apollo: any
+  apollo: any;
 }
 
 class MyApp extends App<Props> {
   render() {
-    const {Component, pageProps, apollo} = this.props
+    const {Component, pageProps, apollo} = this.props;
     return (
       <ApolloProvider client={apollo}>
         <ThemeProvider theme={theme}>
@@ -20,8 +20,8 @@ class MyApp extends App<Props> {
           <Component {...pageProps} />
         </ThemeProvider>
       </ApolloProvider>
-    )
+    );
   }
 }
 
-export default withData(MyApp)
+export default withData(MyApp);

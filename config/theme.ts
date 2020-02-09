@@ -1,34 +1,39 @@
-import styled, {createGlobalStyle} from 'styled-components'
-import {Theme} from 'styled-system'
+import styled, {createGlobalStyle} from 'styled-components';
+import {Theme} from 'styled-system';
 
-type Colors = 'black' | 'white' | 'primary'
+type Colors = 'black' | 'white' | 'greyDark' | 'greyLight' | 'primary';
 
 interface ColorProps {
-  colors: {[key in Colors]: string}
+  colors: {[key in Colors]: string};
 }
+
+export const getColor = (colorName: Colors) => {
+  return theme.colors[colorName];
+};
 
 const palette = {
   black: '#000000',
   white: '#ffffff',
-  blue: '#0070f3',
-}
+  greyDark: '#333333',
+  greyLight: '#F7F5F5',
+};
 
-type FontSizes = 'xs' | 's' | 'm' | 'l' | 'xl'
+type FontSizes = 'xs' | 's' | 'm' | 'l' | 'xl';
 
 interface FontSizesProps {
-  fontSizes: {[key in FontSizes]: number}
+  fontSizes: {[key in FontSizes]: number};
 }
 
-type Space = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
+type Space = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl';
 
 interface SpaceProps {
-  space: {[key in Space]: number}
+  space: {[key in Space]: number};
 }
 
-type Breakpoints = '400px' | '800px'
+type Breakpoints = '400px' | '800px';
 
 interface BreakpointProps {
-  breakpoints: Breakpoints[]
+  breakpoints: Breakpoints[];
 }
 
 export const theme: Theme &
@@ -39,7 +44,9 @@ export const theme: Theme &
   colors: {
     black: palette.black,
     white: palette.white,
-    primary: palette.blue,
+    primary: palette.greyDark,
+    greyDark: palette.greyDark,
+    greyLight: palette.greyLight,
   },
   breakpoints: ['400px', '800px'],
   fontSizes: {
@@ -59,16 +66,16 @@ export const theme: Theme &
     xxl: 42,
     xxxl: 50,
   },
-}
+};
 
 export const GlobalStyle = createGlobalStyle`
   * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
   body, p { margin: 0; }
-`
+`;
 
 export const RootStyle = styled.div`
   font-family: system-ui, sans-serif;
   line-height: 1.5;
-`
+`;
 
-export default theme
+export default theme;

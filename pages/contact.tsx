@@ -1,5 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const Contact = () => <p>Kontakta oss</p>
+import Page from 'ui/Page';
+import Box from 'ui/Box';
+import Text from 'ui/Text';
 
-export default Contact
+const Contact = () => (
+  <Page head={{title: 'Kontakta oss'}}>
+    <Box>
+      <Text>Kontakta oss</Text>
+    </Box>
+  </Page>
+);
+
+export default Contact;

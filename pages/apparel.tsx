@@ -1,6 +1,7 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
 
+import Page from 'ui/Page';
 import Box from 'ui/Box';
 import Text from 'ui/Text';
 import Image from 'ui/Image';
@@ -10,16 +11,20 @@ const Apparel = () => {
   const {data} = useQuery(APPARELS_QUERY);
   const apparels = data?.apparels;
   console.log('data', data);
-  return apparels ? (
-    <Box flexDirection="row">
-      {apparels.map((apparel: any) => (
-        <Box key={apparel.id} width={[1 / 3]}>
-          <Image src={apparel.picture.url} />
-          <Text>{apparel.brand}</Text>
+  return (
+    <Page head={{title: 'Kläder, skor och hjälmar'}}>
+      {apparels ? (
+        <Box flexDirection="row">
+          {apparels.map((apparel: any) => (
+            <Box key={apparel.id} width={[1 / 3]}>
+              <Image src={apparel.picture.url} alt={apparel.brand} />
+              <Text>{apparel.brand}</Text>
+            </Box>
+          ))}
         </Box>
-      ))}
-    </Box>
-  ) : null;
+      ) : null}
+    </Page>
+  );
 };
 
 export default Apparel;
