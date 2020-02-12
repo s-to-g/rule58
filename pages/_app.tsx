@@ -3,7 +3,7 @@ import App from 'next/app';
 import {ApolloProvider} from '@apollo/react-hooks';
 import {ThemeProvider} from 'styled-components';
 
-import theme, {GlobalStyle} from 'config/theme';
+import theme, {GlobalStyle, RootStyle} from 'config/theme';
 import withData from 'utils/apollo-client';
 
 interface Props {
@@ -17,7 +17,9 @@ class MyApp extends App<Props> {
       <ApolloProvider client={apollo}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <Component {...pageProps} />
+          <RootStyle>
+            <Component {...pageProps} />
+          </RootStyle>
         </ThemeProvider>
       </ApolloProvider>
     );

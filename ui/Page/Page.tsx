@@ -16,9 +16,9 @@ const Page = ({children, head}: Props) => (
     <Head>
       <title>{head.title} | Rule 58</title>
     </Head>
-    <Box padding="m" display="block">
+    <Box display="block">
       <Header />
-      {children}
+      <Box padding="m">{children}</Box>
     </Box>
   </>
 );

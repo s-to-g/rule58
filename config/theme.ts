@@ -1,19 +1,28 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import {Theme} from 'styled-system';
 
-type Colors = 'black' | 'white' | 'greyDark' | 'greyLight' | 'primary';
+type Colors =
+  | 'black'
+  | 'white'
+  | 'green'
+  | 'greenLight'
+  | 'greyDark'
+  | 'greyLight'
+  | 'primary';
 
 interface ColorProps {
   colors: {[key in Colors]: string};
 }
 
-export const getColor = (colorName: Colors) => {
-  return theme.colors[colorName];
-};
+export const getColor = (colorName: Colors) => theme.colors[colorName];
 
 const palette = {
   black: '#000000',
   white: '#ffffff',
+  greenOther: '#267356',
+  green: '#008b6b',
+  greenLight: '#52cda6',
+  greenDark: '#006c4b',
   greyDark: '#333333',
   greyLight: '#F7F5F5',
 };
@@ -30,6 +39,8 @@ interface SpaceProps {
   space: {[key in Space]: number};
 }
 
+export const getSpacing = (spacing: Space) => theme.space[spacing];
+
 type Breakpoints = '400px' | '800px';
 
 interface BreakpointProps {
@@ -44,6 +55,8 @@ export const theme: Theme &
   colors: {
     black: palette.black,
     white: palette.white,
+    green: palette.green,
+    greenLight: palette.greenLight,
     primary: palette.greyDark,
     greyDark: palette.greyDark,
     greyLight: palette.greyLight,
@@ -54,7 +67,7 @@ export const theme: Theme &
     s: 13,
     m: 14,
     l: 17,
-    xl: 32,
+    xl: 24,
   },
   space: {
     xs: 4,
@@ -69,12 +82,14 @@ export const theme: Theme &
 };
 
 export const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
   * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
   body, p { margin: 0; }
+  body { overflow-x: hidden; }
 `;
 
 export const RootStyle = styled.div`
-  font-family: system-ui, sans-serif;
+  font-family: 'Karla', arial, system-ui, sans-serif;
   line-height: 1.5;
 `;
 
