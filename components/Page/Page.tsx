@@ -2,7 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 
 import Box from 'ui/Box';
-import Header from 'ui/Header';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import sv from 'assets/lang/sv';
 
 interface Props {
   children: React.ReactNode;
@@ -14,11 +16,17 @@ interface Props {
 const Page = ({children, head}: Props) => (
   <>
     <Head>
-      <title>{head.title} | Rule 58</title>
+      <title>
+        {head.title}
+        {sv.page.title}
+      </title>
     </Head>
     <Box display="block">
       <Header />
-      <Box padding="m">{children}</Box>
+      <Box display="block" minHeight="100vh">
+        {children}
+      </Box>
+      <Footer />
     </Box>
   </>
 );

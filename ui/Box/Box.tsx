@@ -8,6 +8,7 @@ import {
   flexbox,
   border,
   borderRadius,
+  background,
   ColorProps,
   FlexboxProps,
   BorderProps,
@@ -16,6 +17,7 @@ import {
   SpaceProps,
   WidthProps,
   PositionProps,
+  BackgroundProps,
 } from 'styled-system';
 
 type BoxProps = ColorProps &
@@ -25,6 +27,7 @@ type BoxProps = ColorProps &
   LayoutProps &
   SpaceProps &
   WidthProps &
+  BackgroundProps &
   PositionProps;
 
 const Box = styled.div<BoxProps>`
@@ -36,6 +39,7 @@ const Box = styled.div<BoxProps>`
   ${flexbox}
   ${border}
   ${borderRadius}
+  ${background}
 `;
 
 Box.defaultProps = {

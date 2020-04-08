@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Page from 'ui/Page';
+import Page from 'components/Page';
 import Box from 'ui/Box';
 import Text from 'ui/Text';
 

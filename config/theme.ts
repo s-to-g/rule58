@@ -2,13 +2,22 @@ import styled, {createGlobalStyle} from 'styled-components';
 import {Theme} from 'styled-system';
 
 type Colors =
+  | 'primary'
   | 'black'
   | 'white'
   | 'green'
   | 'greenLight'
+  | 'greenDark'
+  | 'greenDarker'
+  | 'grey'
   | 'greyDark'
+  | 'greyDarker'
   | 'greyLight'
-  | 'primary';
+  | 'yellow'
+  | 'coral'
+  | 'blue'
+  | 'orange'
+  | 'sand';
 
 interface ColorProps {
   colors: {[key in Colors]: string};
@@ -23,8 +32,16 @@ const palette = {
   green: '#008b6b',
   greenLight: '#52cda6',
   greenDark: '#006c4b',
-  greyDark: '#333333',
+  greenDarker: '#024341',
+  grey: '#c5c4c4',
+  greyDark: '#404040',
+  greyDarker: '#333333',
   greyLight: '#F7F5F5',
+  yellow: '#FDE53C',
+  coral: '#FF6048',
+  blue: '#005CF0',
+  orange: '#FAAF65',
+  sand: '#D3A57A',
 };
 
 type FontSizes = 'xs' | 's' | 'm' | 'l' | 'xl';
@@ -41,11 +58,14 @@ interface SpaceProps {
 
 export const getSpacing = (spacing: Space) => theme.space[spacing];
 
-type Breakpoints = '400px' | '800px';
+type Breakpoints = '500px' | '900px' | '1100px' | '1500px';
 
 interface BreakpointProps {
   breakpoints: Breakpoints[];
 }
+
+export const getMaxwidth = () =>
+  theme.breakpoints[theme.breakpoints.length - 1];
 
 export const theme: Theme &
   ColorProps &
@@ -53,21 +73,33 @@ export const theme: Theme &
   FontSizesProps &
   SpaceProps = {
   colors: {
+    primary: palette.greyDark,
     black: palette.black,
     white: palette.white,
     green: palette.green,
     greenLight: palette.greenLight,
-    primary: palette.greyDark,
+    greenDark: palette.greenDark,
+    greenDarker: palette.greenDarker,
+    grey: palette.grey,
     greyDark: palette.greyDark,
+    greyDarker: palette.greyDarker,
     greyLight: palette.greyLight,
+    yellow: palette.yellow,
+    coral: palette.coral,
+    blue: palette.blue,
+    orange: palette.orange,
+    sand: palette.sand,
   },
-  breakpoints: ['400px', '800px'],
+  breakpoints: ['500px', '900px', '1100px', '1500px'],
   fontSizes: {
     xs: 11,
     s: 13,
-    m: 14,
-    l: 17,
-    xl: 24,
+    m: 17,
+    l: 24,
+    xl: 36,
+    xxl: 54,
+    xxxl: 74,
+    xxxxl: 94,
   },
   space: {
     xs: 4,
@@ -76,8 +108,8 @@ export const theme: Theme &
     m: 16,
     l: 24,
     xl: 32,
-    xxl: 42,
-    xxxl: 50,
+    xxl: 52,
+    xxxl: 80,
   },
 };
 
@@ -89,7 +121,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const RootStyle = styled.div`
-  font-family: 'Karla', arial, system-ui, sans-serif;
+  font-family: 'Karla', system-ui, sans-serif;
   line-height: 1.5;
 `;
 

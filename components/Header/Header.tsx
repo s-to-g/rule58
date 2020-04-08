@@ -6,39 +6,9 @@ import {getSpacing, getColor} from 'config/theme';
 import Box from 'ui/Box';
 import Text from 'ui/Text';
 import Link from 'ui/Link';
-
-const LINKS = [
-  {
-    route: 'bikes',
-    url: 'cyklar',
-    title: 'Cyklar',
-  },
-  {
-    route: 'apparel',
-    url: 'klader-skor-hjalm',
-    title: 'Kläder, skor och hjälm',
-  },
-  {
-    route: 'accessories',
-    url: 'tillbehor',
-    title: 'Tillbehör',
-  },
-  {
-    route: 'events',
-    url: 'event',
-    title: 'Event',
-  },
-  {
-    route: 'about',
-    url: 'om-oss',
-    title: 'Om oss',
-  },
-  {
-    route: 'contact',
-    url: 'kontakt',
-    title: 'Kontakta oss',
-  },
-];
+import Image from 'ui/Image';
+import logo from 'assets/images/logo.svg';
+import sv from 'assets/lang/sv';
 
 const NavLink = styled(Link)`
   padding: ${getSpacing('s')}px;
@@ -52,10 +22,9 @@ interface MobileNavLinkProps {
 const MobileNavLink = styled(Link)<MobileNavLinkProps>`
   display: block;
   padding: ${getSpacing('l')}px 0;
-  width: 95%;
+  width: 85%;
   text-align: center;
-  ${(p) =>
-    !p.isLastItem && `border-bottom: 1px solid ${getColor('greenLight')}`}
+  ${(p) => !p.isLastItem && `border-bottom: 1px solid ${getColor('greyDark')}`}
 `;
 
 interface MobileMenuProps {
@@ -64,7 +33,7 @@ interface MobileMenuProps {
 
 const MobileMenu = styled(Box)<MobileMenuProps>`
   position: absolute;
-  background-color: ${getColor('green')};
+  background-color: ${getColor('black')};
   top: 0;
   left: 100%;
   bottom: 0;
@@ -72,6 +41,7 @@ const MobileMenu = styled(Box)<MobileMenuProps>`
   width: 100%;
   transition: all 0.2s ease-in-out;
   transform: ${(p) => (p.isOpen ? `translateX(-100%)` : `translateX(0)`)};
+  z-index: 9;
 `;
 
 const MenuHamburger = styled(Box)`
@@ -99,12 +69,13 @@ const Bar = styled(Box).attrs((props: BarProps) => ({
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const LINKS = sv.header.links;
   return (
-    <Box padding="m" alignItems="center">
-      <Box>
+    <Box paddingY="m" paddingX={['l', 'xl', 'xl']} alignItems="center">
+      <Box width="130px">
         <NextLink href="/" passHref>
           <Link>
-            <Text fontSize="xl">Rule 58</Text>
+            <Image src={logo} alt="Rule 58 bike shop logo" />
           </Link>
         </NextLink>
       </Box>
@@ -120,9 +91,11 @@ const Header = () => {
         </Box>
         <MenuHamburger
           display={['block', 'block', 'none']}
+          position="relative"
+          right="-16px"
           padding="m"
           onClick={() => {
-            setIsOpen(!isOpen);
+            setIsOpen(() => !isOpen);
           }}
         >
           <Bar />
@@ -140,9 +113,10 @@ const Header = () => {
           <MenuHamburger
             display="block"
             padding="m"
+            paddingRight={['s', 'm', 'm']}
             margin="m"
             onClick={() => {
-              setIsOpen((isOpen) => !isOpen);
+              setIsOpen(() => !isOpen);
             }}
           >
             <Bar isRotatedTop isOpen />
@@ -152,9 +126,18 @@ const Header = () => {
         <Box flexDirection="column" width="100%">
           <nav>
             {LINKS.map((link, index) => (
-              <Box justifyContent="center">
+              <Box justifyContent="center" key={link.route}>
                 <NextLink href={`/${link.route}`} key={link.route} passHref>
-                  <MobileNavLink isLastItem={index === LINKS.length - 1}>
+                  <MobileNavLink
+                    onClick={() => {
+                      if (window.location.pathname === `/${link.route}`) {
+                        console.log('samma!!!!!!!!!');
+                        // needed for mobile menu to close when navigating to same page as you already are on
+                        setIsOpen(false);
+                      }
+                    }}
+                    isLastItem={index === LINKS.length - 1}
+                  >
                     <Text fontSize="xl" color="white">
                       {link.title}
                     </Text>

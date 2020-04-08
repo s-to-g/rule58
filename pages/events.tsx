@@ -1,7 +1,7 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
 
-import Page from 'ui/Page';
+import Page from 'components/Page';
 import Box from 'ui/Box';
 import Text from 'ui/Text';
 import EVENTS_QUERY from 'graphql/EventsQuery';
