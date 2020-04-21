@@ -3,11 +3,16 @@ import styled from 'styled-components';
 
 interface Props {
   src: string;
-  alt: string;
+  alt?: string;
+  fullHeight?: boolean;
 }
 
-const StyledImage = styled.img`
+interface StyledImageProps {
+  fullHeight?: boolean;
+}
+const StyledImage = styled.img<StyledImageProps>`
   width: 100%;
+  ${(props) => props.fullHeight && 'height: 100%;'}
 `;
 
 const Image = ({src, alt}: Props) => <StyledImage src={src} alt={alt} />;

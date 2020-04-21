@@ -10,9 +10,15 @@ import Image from 'ui/Image';
 import logo from 'assets/images/logo.svg';
 import sv from 'assets/lang/sv';
 
-const NavLink = styled(Link)`
+interface NavLinkProps {
+  isLastItem: boolean;
+}
+
+const NavLink = styled(Link)<NavLinkProps>`
   padding: ${getSpacing('s')}px;
   margin: 0 ${getSpacing('xs')}px;
+  ${(p) => p.isLastItem && 'padding-right: 0;'}
+  ${(p) => p.isLastItem && 'margin-right: 0;'}
 `;
 
 interface MobileNavLinkProps {
@@ -32,7 +38,7 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = styled(Box)<MobileMenuProps>`
-  position: absolute;
+  position: fixed;
   background-color: ${getColor('black')};
   top: 0;
   left: 100%;
@@ -82,11 +88,19 @@ const Header = () => {
       <Box marginLeft="auto">
         <Box display={['none', 'none', 'block']}>
           <nav>
-            {LINKS.map((link) => (
-              <NextLink href={`/${link.route}`} key={link.route} passHref>
-                <NavLink>{link.title}</NavLink>
-              </NextLink>
-            ))}
+            {LINKS.map((link, index) => {
+              console.log(
+                'index === LINKS.length - 1',
+                index === LINKS.length - 1,
+              );
+              return (
+                <NextLink href={`/${link.route}`} key={link.route} passHref>
+                  <NavLink isLastItem={index === LINKS.length - 1}>
+                    {link.title}
+                  </NavLink>
+                </NextLink>
+              );
+            })}
           </nav>
         </Box>
         <MenuHamburger

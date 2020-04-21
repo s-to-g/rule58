@@ -1,13 +1,11 @@
 import gql from 'graphql-tag';
 
-const BIKES_QUERY = gql`
-  query Bikes {
-    bikes {
-      id
-      brand
+const HOME_SECTIONS_QUERY = gql`
+  query homeSections {
+    homeSections {
+      title
       description
       picture {
-        id
         url
         width
         height
@@ -16,4 +14,4 @@ const BIKES_QUERY = gql`
   }
 `;
 
-export default BIKES_QUERY;
+export default HOME_SECTIONS_QUERY;
