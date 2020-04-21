@@ -8,6 +8,8 @@ const APPARELS_QUERY = gql`
       picture {
         id
         url
+        width
+        height
       }
     }
   }

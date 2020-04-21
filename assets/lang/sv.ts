@@ -42,17 +42,7 @@ const sv = {
     phone: '08-xxxxxxx',
   },
   home: {
-    bikeTitle: 'Cyklar',
-    bikeDesc:
-      'Hos oss hittar du några av de branschledande och mest innovativa cykelmärkena som går att få tag på.',
-    mechanicsTitle: 'Mekaniker',
-    mechanicsDesc:
-      'Vi har en fullt utrustad verkstad och tillsammans mer än 20-års erfarenhet av att serva och reparera cyklar.',
-    coffeeTitle: 'Kaffe & snack',
-    coffeeDesc: 'Hos oss hittar du gott kaffe och härligt cykelsnack.',
-    cyclingTitle: 'Cykling',
-    cyclingDesc:
-      'Oavsett om du cyklar på vägen eller i skogen så kommer du att känna dig välkommen hos oss. Vi brinner för att få dig som kund att känna samma passion som vi gör.',
+    title: 'Cyklar, tillbehör och service',
   },
   bikes: {
     title: 'Cyklar',

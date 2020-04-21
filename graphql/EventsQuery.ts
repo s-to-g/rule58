@@ -9,6 +9,8 @@ const EVENTS_QUERY = gql`
       picture {
         id
         url
+        width
+        height
       }
     }
   }
