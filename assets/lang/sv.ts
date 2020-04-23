@@ -51,10 +51,11 @@ const sv = {
   },
   apparel: {
     title: 'Hjälmar och skor',
-    desc: '',
+    desc: 'Testing testing',
   },
   accessories: {
     title: 'Tillbehör',
+    desc: 'Jaha vad ska det stå här då?',
   },
 };
 
