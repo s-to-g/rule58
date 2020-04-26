@@ -78,7 +78,7 @@ const Header = () => {
   const LINKS = sv.header.links;
   return (
     <Box paddingY="m" paddingX={['l', 'xl', 'xl']} alignItems="center">
-      <Box width="130px">
+      <Box width="120px">
         <NextLink href="/" passHref>
           <Link>
             <Image src={logo} alt="Rule 58 bike shop logo" />
@@ -89,10 +89,6 @@ const Header = () => {
         <Box display={['none', 'none', 'block']}>
           <nav>
             {LINKS.map((link, index) => {
-              console.log(
-                'index === LINKS.length - 1',
-                index === LINKS.length - 1,
-              );
               return (
                 <NextLink href={`/${link.route}`} key={link.route} passHref>
                   <NavLink isLastItem={index === LINKS.length - 1}>

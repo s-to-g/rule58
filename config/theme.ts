@@ -1,4 +1,4 @@
-import styled, {createGlobalStyle} from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 import {Theme} from 'styled-system';
 
 type Colors =
@@ -113,15 +113,9 @@ export const theme: Theme &
 };
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
   * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
   body, p { margin: 0; }
-  body { overflow-x: hidden; }
-`;
-
-export const RootStyle = styled.div`
-  font-family: 'Karla', system-ui, sans-serif;
-  line-height: 1.5;
+  body { overflow-x: hidden; font-family: 'Karla', system-ui, sans-serif; line-height: 1.5; }
 `;
 
 export default theme;

@@ -80,7 +80,7 @@ const Home = () => {
   const maxWidth = getMaxwidth();
   return (
     <Page head={{title: sv.home.title}}>
-      <Box paddingTop={['0', '0', 'xxxl']} display="block">
+      <Box paddingTop={['0', '0', 'xl']} display="block">
         {homeSections &&
           homeSections.map((section: any, index: number) => {
             const {width: imageWidth, height: imageHeight} = section.picture;

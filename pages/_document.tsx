@@ -1,5 +1,6 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import {ServerStyleSheet} from 'styled-components';
+import sv from 'assets/lang/sv';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -27,13 +28,18 @@ export default class MyDocument extends Document {
       sheet.seal();
     }
   }
+
   render() {
     return (
       <Html lang="sv">
         <Head>
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-          <meta name="description" content="Rule 58 är din cykelaffär...." />
+          <meta name="description" content={sv.app.desc} />
           <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Karla&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <Main />
         <NextScript />
