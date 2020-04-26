@@ -1,4 +1,7 @@
 const sv = {
+  app: {
+    desc: 'Rule 58 är din cykelaffär....',
+  },
   page: {
     title: ' | Rule 58',
   },

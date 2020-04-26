@@ -11,7 +11,6 @@ import sv from 'assets/lang/sv';
 const Accessories = () => {
   const {data} = useQuery(ACCESSORIES_QUERY);
   const accessories = data?.accessories;
-  console.log('data', data);
   return (
     <Page head={{title: sv.accessories.title}}>
       <PageHeader
