@@ -18,12 +18,12 @@ const Page = ({children, head}: Props) => (
     <Head>
       <title>
         {head.title}
-        {sv.page.title}
+        {sv.app.title}
       </title>
     </Head>
     <Box display="block">
       <Header />
-      <Box display="block" minHeight="100vh">
+      <Box display="block" minHeight="calc(100vh - 73px)">
         {children}
       </Box>
       <Footer />

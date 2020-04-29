@@ -98,7 +98,7 @@ const Home = () => {
                     marginX="auto"
                     flexDirection={['column-reverse', 'column-reverse', 'row']}
                   >
-                    <TextOuter paddingX={['m', 'm', 'xl']}>
+                    <TextOuter>
                       <TextInner>
                         <Title>{section.title}</Title>
                         <Desc>{section.description}</Desc>
@@ -121,6 +121,7 @@ const Home = () => {
                   <ColorBlock />
                   <Box
                     maxWidth={maxWidth}
+                    width="100%"
                     marginX="auto"
                     flexDirection={['column', 'column', 'row']}
                   >

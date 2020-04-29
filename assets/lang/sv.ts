@@ -1,8 +1,6 @@
 const sv = {
   app: {
     desc: 'Rule 58 är din cykelaffär....',
-  },
-  page: {
     title: ' | Rule 58',
   },
   header: {
@@ -21,11 +19,6 @@ const sv = {
         route: 'accessories',
         url: 'tillbehor',
         title: 'Tillbehör',
-      },
-      {
-        route: 'events',
-        url: 'event',
-        title: 'Event',
       },
       {
         route: 'about',
@@ -59,6 +52,18 @@ const sv = {
   accessories: {
     title: 'Tillbehör',
     desc: 'Jaha vad ska det stå här då?',
+  },
+  contact: {
+    title: 'Kontakta oss',
+    pageTitle: 'Säg hej.',
+    addressTitle: 'Adress:',
+    address: 'Bobergsgatan 73, Stockholm',
+    emailTitle: 'Mail:',
+    email: 'rule58bikeshop@gmail.com',
+    phoneTitle: 'Telefon:',
+    phone: '08-XXX XXX XX',
+    hrefTel: 'tel:08-000000',
+    hrefMail: 'mailto:rule58bikeshop@gmail.com',
   },
 };
 

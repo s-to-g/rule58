@@ -6,10 +6,11 @@ import Text from 'ui/Text';
 import Link from 'ui/Link';
 import bikeSrc from 'assets/images/RULE58_STORE_145.jpg';
 import {getColor} from 'config/theme';
+import sv from 'assets/lang/sv';
 
 const Contact = () => {
   return (
-    <Page head={{title: 'Kontakta oss'}}>
+    <Page head={{title: sv.contact.title}}>
       <Box width="100%" flexDirection={['column', 'column', 'row']}>
         <Box
           width={['100%', '100%', '40%']}
@@ -25,31 +26,30 @@ const Contact = () => {
           flexDirection="column"
           justifyContent="center"
           paddingX="xl"
-          // alignItems="center"
         >
           <Box borderBottom={`2px solid ${getColor('black')}`} marginBottom="m">
-            <Text fontSize="xxl">Säg hej.</Text>
+            <Text fontSize="xxl">{sv.contact.pageTitle}</Text>
           </Box>
           <Box flexDirection="column">
-            <Text>Adress:</Text>
+            <Text>{sv.contact.addressTitle}</Text>
             <Text fontSize={['l', 'l', 'xl']} lineHeight="100%">
-              Bobergsgatan 73, Stockholm
+              {sv.contact.address}
             </Text>
           </Box>
 
           <Box paddingY="m" flexDirection="column">
-            <Text>Mail:</Text>
-            <Link href="mailto:rule58bikeshop@gmail.com">
+            <Text>{sv.contact.emailTitle}</Text>
+            <Link href={sv.contact.hrefMail}>
               <Text fontSize={['l', 'l', 'xl']} lineHeight="100%">
-                rule58bikeshop@gmail.com
+                {sv.contact.email}
               </Text>
             </Link>
           </Box>
           <Box flexDirection="column">
-            <Text>Telefon:</Text>
-            <Link href="tel:08-000000">
+            <Text>{sv.contact.phoneTitle}</Text>
+            <Link href={sv.contact.hrefTel}>
               <Text fontSize={['l', 'l', 'xl']} lineHeight="100%">
-                08-XXX XXX XX
+                {sv.contact.phone}
               </Text>
             </Link>
           </Box>
