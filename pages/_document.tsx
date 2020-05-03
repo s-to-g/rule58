@@ -1,7 +1,7 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import {ServerStyleSheet} from 'styled-components';
 import sv from 'assets/lang/sv';
-import favIcon from 'assets/images/favicon.ico';
+import favIcon from '../favicon.ico';
 import favIcon16 from '../favicon-16x16.png';
 import favIcon32 from '../favicon-32x32.png';
 import appleTouchIcon from '../apple-touch-icon.png';
