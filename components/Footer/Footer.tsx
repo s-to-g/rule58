@@ -35,15 +35,17 @@ const Footer = () => {
               {sv.footer.postal}
             </Text>
           </Box>
-          <Link href={sv.contact.hrefTel}>
-            <Text
-              fontSize="l"
-              color="white"
-              textAlign={['center', 'left', 'left']}
-            >
-              {sv.footer.phone}
-            </Text>
-          </Link>
+          <Box justifyContent="center">
+            <Link href={sv.contact.hrefTel}>
+              <Text
+                fontSize="l"
+                color="white"
+                textAlign={['center', 'left', 'left']}
+              >
+                {sv.footer.phone}
+              </Text>
+            </Link>
+          </Box>
         </Box>
         <Box
           marginLeft={[0, 'auto', 'auto']}

@@ -9,7 +9,7 @@ import {getImageRatio, getImageHeightPercentage} from 'utils/imageRatio';
 const CategoryLayout = ({items}: {items: any}) => {
   const maxWidth = getMaxwidth();
   return (
-    <Box display="block">
+    <Box display="block" paddingTop={['m', 0, 0]}>
       {items
         ? items.map((item: any, index: any) => {
             const {width: imageWidth, height: imageHeight} = item.picture;

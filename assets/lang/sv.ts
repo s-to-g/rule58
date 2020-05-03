@@ -6,28 +6,23 @@ const sv = {
   header: {
     links: [
       {
-        route: 'bikes',
-        url: 'cyklar',
+        route: 'cyklar',
         title: 'Cyklar',
       },
       {
-        route: 'apparel',
-        url: 'klader-skor-hjalm',
-        title: 'Skor och hjälm',
+        route: 'hjalmar-och-skor',
+        title: 'Hjälmar och skor',
       },
       {
-        route: 'accessories',
-        url: 'tillbehor',
+        route: 'tillbehor',
         title: 'Tillbehör',
       },
       {
-        route: 'about',
-        url: 'om-oss',
+        route: 'om-oss',
         title: 'Om oss',
       },
       {
-        route: 'contact',
-        url: 'kontakt',
+        route: 'kontakt',
         title: 'Kontakta oss',
       },
     ],
