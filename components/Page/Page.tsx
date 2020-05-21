@@ -10,6 +10,7 @@ interface Props {
   children: React.ReactNode;
   head: {
     title: string;
+    desc: string;
   };
 }
 
@@ -20,6 +21,7 @@ const Page = ({children, head}: Props) => (
         {head.title}
         {sv.app.title}
       </title>
+      <meta name="description" content={head.desc} />
     </Head>
     <Box display="block">
       <Header />

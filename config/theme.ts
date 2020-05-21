@@ -6,9 +6,6 @@ type Colors =
   | 'black'
   | 'white'
   | 'green'
-  | 'greenLight'
-  | 'greenDark'
-  | 'greenDarker'
   | 'grey'
   | 'greyDark'
   | 'greyDarker'
@@ -28,11 +25,7 @@ export const getColor = (colorName: Colors) => theme.colors[colorName];
 const palette = {
   black: '#000000',
   white: '#ffffff',
-  greenOther: '#267356',
-  green: '#008b6b',
-  greenLight: '#52cda6',
-  greenDark: '#006c4b',
-  greenDarker: '#024341',
+  green: '#546C5E',
   grey: '#c5c4c4',
   greyDark: '#404040',
   greyDarker: '#333333',
@@ -77,9 +70,6 @@ export const theme: Theme &
     black: palette.black,
     white: palette.white,
     green: palette.green,
-    greenLight: palette.greenLight,
-    greenDark: palette.greenDark,
-    greenDarker: palette.greenDarker,
     grey: palette.grey,
     greyDark: palette.greyDark,
     greyDarker: palette.greyDarker,
