@@ -12,7 +12,7 @@ const Accessories = () => {
   const {data} = useQuery(ACCESSORIES_QUERY);
   const accessories = data?.accessories;
   return (
-    <Page head={{title: sv.accessories.title}}>
+    <Page head={{title: sv.accessories.title, desc: sv.accessories.metaDesc}}>
       <PageHeader
         imgUrl={headerImage}
         title={sv.accessories.title}

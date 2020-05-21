@@ -43,7 +43,6 @@ const TextOuter = styled(Box).attrs({
   width: ['100%', '100%', '40%'],
   paddingX: ['m', 'm', 'xl'],
   paddingY: ['m', 'm', 0],
-  justifyContent: 'center',
   position: 'relative',
   zIndex: 2,
 })``;
@@ -58,7 +57,7 @@ const TextInner = styled(Box).attrs({
 const ColorBlock = styled(Box).attrs({
   width: '100%',
   height: '100%',
-  backgroundColor: 'greenDarker',
+  backgroundColor: 'green',
   position: 'absolute',
   top: ['0', '0', '-150px'],
   left: '0',
@@ -79,7 +78,7 @@ const Home = () => {
   const homeSections = data?.homeSections;
   const maxWidth = getMaxwidth();
   return (
-    <Page head={{title: sv.home.title}}>
+    <Page head={{title: sv.home.title, desc: sv.home.metaDesc}}>
       <Box paddingTop={['0', '0', 'xl']} display="block">
         {homeSections &&
           homeSections.map((section: any, index: number) => {

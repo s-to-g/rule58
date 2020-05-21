@@ -12,7 +12,7 @@ const Apparel = () => {
   const {data} = useQuery(APPARELS_QUERY);
   const apparels = data?.apparels;
   return (
-    <Page head={{title: sv.apparel.title}}>
+    <Page head={{title: sv.apparel.title, desc: sv.apparel.metaDesc}}>
       <PageHeader
         imgUrl={headerImage}
         title={sv.apparel.title}

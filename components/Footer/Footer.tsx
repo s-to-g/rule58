@@ -35,14 +35,32 @@ const Footer = () => {
               {sv.footer.postal}
             </Text>
           </Box>
-          <Box justifyContent="center">
+          <Box paddingBottom="l" flexDirection="column">
+            <Text
+              fontSize="l"
+              color="white"
+              lineHeight="120%"
+              textAlign={['center', 'left', 'left']}
+            >
+              {sv.contact.hoursWeekday}
+            </Text>
+            <Text
+              fontSize="l"
+              lineHeight="120%"
+              color="white"
+              textAlign={['center', 'left', 'left']}
+            >
+              {sv.contact.hoursSaturday}
+            </Text>
+          </Box>
+          <Box justifyContent={['center', 'left', 'left']}>
             <Link href={sv.contact.hrefTel}>
               <Text
                 fontSize="l"
                 color="white"
                 textAlign={['center', 'left', 'left']}
               >
-                {sv.footer.phone}
+                {sv.contact.phone}
               </Text>
             </Link>
           </Box>
@@ -64,7 +82,7 @@ const Footer = () => {
             </Link>
           </Box>
           <Link
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/Rule58bikeshop/"
             target="_blank"
             rel="noopener noreferrer"
           >

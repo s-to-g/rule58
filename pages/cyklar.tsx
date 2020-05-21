@@ -12,7 +12,7 @@ const Bikes = () => {
   const {data} = useQuery(BIKES_QUERY);
   const bikes = data?.bikes;
   return (
-    <Page head={{title: sv.bikes.title}}>
+    <Page head={{title: sv.bikes.title, desc: sv.bikes.metaDesc}}>
       <PageHeader
         imgUrl={headerImage}
         title={sv.bikes.title}
