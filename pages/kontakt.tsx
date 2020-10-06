@@ -9,29 +9,33 @@ import bikeSrc from 'assets/images/RULE58_STORE_145.jpg';
 import {getColor} from 'config/theme';
 import sv from 'assets/lang/sv';
 
-const ContactText = styled(Text).attrs({
+const ContactText = styled(Text as any).attrs({
   fontSize: ['m', 'l', 'xl'],
   lineHeight: '100%',
 })``;
 
 const Contact = () => {
   return (
-    <Page head={{title: sv.contact.title, desc: sv.contact.metaDesc}}>
+    <Page
+      head={{title: sv.contact.title, desc: sv.contact.metaDesc}}
+      fullHeight={false}
+    >
       <Box width="100%" flexDirection={['column', 'column', 'row']}>
         <Box
           width={['100%', '100%', '40%']}
-          height={['0', '0', 'auto']}
+          height={['200px', '200px', 'auto']}
           backgroundImage={`url(${bikeSrc})`}
           backgroundSize="cover"
           backgroundPosition="center"
         />
         <Box
           width={['100%', '100%', '60%']}
-          minHeight="calc(100vh - 73px)"
+          minHeight={['auto', 'auto', 'calc(100vh - 73px)']}
           backgroundColor="greyLight"
           flexDirection="column"
           justifyContent="center"
           paddingX="xl"
+          paddingY={['xl', 'xl', 0]}
         >
           <Box borderBottom={`2px solid ${getColor('black')}`} marginBottom="m">
             <Text fontSize={['xl', 'xl', 'xxl']}>{sv.contact.pageTitle}</Text>
