@@ -141,8 +141,6 @@ const Header = () => {
                   <MobileNavLink
                     onClick={() => {
                       if (window.location.pathname === `/${link.route}`) {
-                        console.log('samma!!!!!!!!!');
-                        // needed for mobile menu to close when navigating to same page as you already are on
                         setIsOpen(false);
                       }
                     }}

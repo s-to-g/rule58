@@ -1,7 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 import {Theme} from 'styled-system';
 
-type Colors =
+export type Colors =
   | 'primary'
   | 'black'
   | 'white'

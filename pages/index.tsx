@@ -79,7 +79,11 @@ const Home = () => {
   const maxWidth = getMaxwidth();
   return (
     <Page head={{title: sv.home.title, desc: sv.home.metaDesc}}>
-      <Box paddingTop={['0', '0', 'xl']} display="block">
+      <Box
+        paddingTop={['0', '0', 'xl']}
+        display="block"
+        backgroundColor="greyLight"
+      >
         {homeSections &&
           homeSections.map((section: any, index: number) => {
             const {width: imageWidth, height: imageHeight} = section.picture;
@@ -90,7 +94,7 @@ const Home = () => {
             const heightPercentage = getImageHeightPercentage(imageRatio);
             if (index % 2 === 0) {
               return (
-                <SectionWrapper key={section.title}>
+                <SectionWrapper key={section.title} backgroundColor="greyLight">
                   <Box
                     maxWidth={maxWidth}
                     width="100%"
@@ -116,7 +120,7 @@ const Home = () => {
               );
             } else {
               return (
-                <SectionWrapper key={section.title}>
+                <SectionWrapper key={section.title} backgroundColor="greyLight">
                   <ColorBlock />
                   <Box
                     maxWidth={maxWidth}

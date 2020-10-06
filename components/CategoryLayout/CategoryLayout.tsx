@@ -12,7 +12,8 @@ const CategoryLayout = ({items}: {items: any}) => {
     <Box display="block" paddingTop={['m', 0, 0]}>
       {items
         ? items.map((item: any, index: any) => {
-            const {width: imageWidth, height: imageHeight} = item.picture;
+            const picture = item.picture || {};
+            const {width: imageWidth, height: imageHeight} = picture;
             const imageRatio = getImageRatio({
               width: imageWidth,
               height: imageHeight,
@@ -47,7 +48,7 @@ const CategoryLayout = ({items}: {items: any}) => {
                       left={0}
                       right={0}
                     >
-                      <Image src={item.picture.url} fullHeight />
+                      <Image src={picture.url} fullHeight />
                     </Box>
                   </Box>
                 </Box>
@@ -59,7 +60,7 @@ const CategoryLayout = ({items}: {items: any}) => {
                 >
                   <Box paddingTop="m" paddingBottom="s" justifyContent="center">
                     <Text fontSize={['xl', 'xxl']} fontWeight="bold">
-                      {item.brand}
+                      {item.brand || item.title}
                     </Text>
                   </Box>
                   <Text fontSize={['m', 'l', 'xl']}>{item.description}</Text>
